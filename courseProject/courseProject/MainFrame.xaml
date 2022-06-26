@@ -1,0 +1,130 @@
+﻿<Page x:Class="courseProject.MainFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:courseProject"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1500"
+      Title="MainFrame"
+      RenderOptions.BitmapScalingMode="HighQuality">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonMenuStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="0,25,25,0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="#C4D9EC">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="206*"/>
+            <ColumnDefinition Width="787*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="#6527F2" CornerRadius="0, 35, 35, 0" Margin="0,0,0,0.4">
+            
+                <Border.Effect>
+                <DropShadowEffect BlurRadius="24" Color="#6527F2" ShadowDepth="5" Opacity="0.8"/>
+            </Border.Effect>
+            <Grid>
+            <StackPanel>
+                <Image Source="Images/iconpage.png" Width="67" Height="76" VerticalAlignment="center" Margin="106,40,106,10" />
+                <Image Source="Images/iconpagemenu.png" Width="195" Height="47"/>
+                <Grid  Margin="0,90,-0.4,0" Height="237">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="54*"/>
+                        <RowDefinition Height="24*"/>
+                        <RowDefinition Height="54*"/>
+                        <RowDefinition Height="24*"/>
+                        <RowDefinition Height="54*"/>
+                        <RowDefinition Height="24*"/>
+
+                        <RowDefinition Height="54*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                        <Button Cursor="Hand" Grid.Row="0" Width="257" HorizontalAlignment="Left" Background="#FFFFFF"  Click="Button_Profile" Style="{DynamicResource ButtonMenuStyle}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/profile.png" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,2,85,0" FontSize="18" FontWeight="Regular" FontFamily="Open Sans Hebrew">Профиль</TextBlock>
+                        </StackPanel>
+                    </Button>
+                        <Button Cursor="Hand" Grid.Row="2" Width="257" HorizontalAlignment="Left" Background="#FFFFFF" Style="{DynamicResource ButtonMenuStyle}" Click="Button_ChooseAPet">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/dog-seating.png" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,2,22,0" FontSize="18" FontWeight="Regular" FontFamily="Open Sans Hebrew">Выбрать питомца</TextBlock>
+                        </StackPanel>
+                    </Button>
+                        <Button Cursor="Hand" Grid.Row="4" Width="257" HorizontalAlignment="Left" Background="#FFFFFF" Style="{DynamicResource ButtonMenuStyle}" Click="Button_Contacts">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/contacts.png" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,2,90,0" FontSize="18" FontWeight="Regular" FontFamily="Open Sans Hebrew">Контакты</TextBlock>
+                        </StackPanel>
+                    </Button>
+                        <Button Cursor="Hand" x:Name="AdminFunctionsButton" Grid.Row="6" Width="257" Visibility="Hidden" HorizontalAlignment="Left" Background="#FFFFFF" Style="{DynamicResource ButtonMenuStyle}" Click="Button_AdminFunctions">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="D:\Лабы\OOP_courseProject\courseProject\courseProject\resources\customer-service.png" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,2,27,0" FontSize="18" FontWeight="Regular" FontFamily="Open Sans Hebrew">Функции админа</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </StackPanel>
+            </Grid>
+        </Border>
+        <Frame x:Name="Frames" Grid.Column="2" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden" Navigated="Frames_Navigated">
+
+        </Frame>
+    </Grid>
+</Page>

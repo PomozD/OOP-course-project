@@ -1,0 +1,309 @@
+﻿<Page x:Class="courseProject.AdminFunctions"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:courseProject"
+      mc:Ignorable="d" 
+      d:DesignHeight="1720" d:DesignWidth="1500"
+      Title="AdminFunctions">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonAdminAddPhoto" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="20" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonAddPetStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+
+    <ScrollViewer HorizontalScrollBarVisibility="Hidden">
+        <Border Height="884" VerticalAlignment="Top">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="464*"/>
+                    <RowDefinition Height="auto"/>
+
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" x:Name="h1" Orientation="Vertical" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="71" Width="500">
+                    <TextBlock  FontSize="32" FontWeight="Regular" FontFamily="Roboto" Margin="90,20,0,0"><Run Text="Функции администратора"/></TextBlock>
+                    <Rectangle Height="1" VerticalAlignment="Bottom" Fill="#6527F2" Margin="90,12,0,0"></Rectangle>
+                </StackPanel>
+                <Grid Grid.Row="1" Margin="90,19.8,300,74.2">
+                    <Border Background="white" CornerRadius="20" Margin="0,0,0,-60">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Black" ShadowDepth="6" Opacity="0.3"/>
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="41*"/>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="31*"/>
+                                <RowDefinition Height="31*"/>
+                                <RowDefinition Height="134*"/>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="70*"/>
+                                <RowDefinition/>
+
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,-0.4,0.8">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,23,0,0"><Run Text="Добавить главное фото профиля"/></TextBlock>
+                                <Button Width="20" Height="20" Background="white" Margin="40,10,0,0" Style="{DynamicResource ButtonAdminAddPhoto}" Click="AddMainPhoto_button" >
+                                    <Button.Effect>
+                                        <DropShadowEffect BlurRadius="10" Color="black" ShadowDepth="6" Opacity="0.3"/>
+                                    </Button.Effect>
+                                    <TextBlock FontFamily="Open Sans" FontSize="12" FontWeight="DemiBold" Padding="0,0,1,0"  Foreground="Black">+</TextBlock>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0.2,-0.4,3.4" Grid.Row="1">
+                                <TextBlock  FontSize="14" FontWeight="Regular" HorizontalAlignment="Left" FontFamily="Roboto" Margin="40,10,0,0"><Run Text="Добавить первое второстепенное фото"/></TextBlock>
+                                <Button Width="20" Height="20" HorizontalAlignment="Right"  Background="white" Margin="40,0,0,0" Style="{DynamicResource ButtonAdminAddPhoto}" Click="AddSecondaryPhoto1_button" >
+                                    <Button.Effect>
+                                        <DropShadowEffect BlurRadius="10" Color="black" ShadowDepth="6" Opacity="0.3"/>
+                                    </Button.Effect>
+                                    <TextBlock FontFamily="Open Sans" FontSize="12" FontWeight="DemiBold" Padding="0,0,1,0"  Foreground="Black">+</TextBlock>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0.6,-0.4,1.6">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,10,0,0"><Run Text="Добавить второе второстепенное фото"/></TextBlock>
+                                <Button Width="20" Height="20" Background="white" Margin="40,0,0,0" Style="{DynamicResource ButtonAdminAddPhoto}" Click="AddSecondaryPhoto2_button" >
+                                    <Button.Effect>
+                                        <DropShadowEffect BlurRadius="10" Color="black" ShadowDepth="6" Opacity="0.3"/>
+                                    </Button.Effect>
+                                    <TextBlock FontFamily="Open Sans" FontSize="12" FontWeight="DemiBold" Padding="0,0,1,0"  Foreground="Black">+</TextBlock>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,4.4,-0.4,0.8">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,10,0,0"><Run Text="Добавить третье второстепенное фото"/></TextBlock>
+                                <Button Width="20" Height="20" Background="white" Margin="40,0,0,0" Style="{DynamicResource ButtonAdminAddPhoto}" Click="AddSecondaryPhoto3_button" >
+                                    <Button.Effect>
+                                        <DropShadowEffect BlurRadius="10" Color="black" ShadowDepth="6" Opacity="0.3"/>
+                                    </Button.Effect>
+                                    <TextBlock FontFamily="Open Sans" FontSize="12" FontWeight="DemiBold" Padding="0,0,1,0"  Foreground="Black">+</TextBlock>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,2.2,-0.4,1.2">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,23,0,0"><Run Text="История:"/></TextBlock>
+                                <TextBox x:Name="addHistory" Height="100" Width="300" TextWrapping="Wrap" MaxLength="100" Padding="15,0,15,15" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,10,0"></TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Тип:"/></TextBlock>
+                                <ComboBox x:Name="typesOfPets" Margin="20,0,0,0.2" MinWidth="70">
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="6" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Имя питомца:"/></TextBlock>
+                                <TextBox x:Name="addPet_name" Width="300" MaxLength="15" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="7" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Характер:"/></TextBlock>
+                                <TextBox x:Name="addPet_character" Width="300" MaxLength="50" TextWrapping="Wrap" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="8" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Возраст:"/></TextBlock>
+                                <TextBox x:Name="addPet_age" Width="300" MaxLength="20" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="9" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Пол:"/></TextBlock>
+                                <TextBox x:Name="addPet_sex" Width="300" MaxLength="20" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="10" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Кастрирован/стерилизована:"/></TextBlock>
+                                <TextBox x:Name="addPet_castrated" Width="300" MaxLength="10" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                            </StackPanel>
+                            <Button  Cursor="Hand" x:Name="RegistrationButton" Margin="40,0,0,0" Grid.Row="11" Width="120" Height="30" HorizontalAlignment="Left" Background="#6527F2" Style="{DynamicResource ButtonAddPetStyle}" Click="ButtonAddPet">
+                                <Button.Effect>
+                                    <DropShadowEffect BlurRadius="10" Color="#6527F2" ShadowDepth="6" Opacity="0.3"/>
+                                </Button.Effect>
+                                <TextBlock FontFamily="Open Sans" FontSize="10" FontWeight="DemiBold"  Foreground="White">Добавить</TextBlock>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel Orientation="Vertical">
+                        <Button Cursor="Hand" Margin="90,0,0,0" Width="200" Height="50" HorizontalAlignment="Left" Background="#6527F2" Style="{DynamicResource ButtonAddPetStyle}" Click="ButtonOpenPageOrders">
+                            <Button.Effect>
+                                <DropShadowEffect BlurRadius="10" Color="#6527F2" ShadowDepth="6" Opacity="0.3"/>
+                            </Button.Effect>
+                            <TextBlock FontFamily="Open Sans" FontSize="15" FontWeight="DemiBold"  Foreground="White">Заявки на питомцев</TextBlock>
+                        </Button>
+                        <Button Cursor="Hand" Margin="90,20,0,50" Width="200" Height="50" HorizontalAlignment="Left" Background="#6527F2" Style="{DynamicResource ButtonAddPetStyle}" Click="ButtonOpenPageMessages">
+                            <Button.Effect>
+                                <DropShadowEffect BlurRadius="10" Color="#6527F2" ShadowDepth="6" Opacity="0.3"/>
+                            </Button.Effect>
+                            <TextBlock FontFamily="Open Sans" FontSize="15" FontWeight="DemiBold"  Foreground="White">Сообщения</TextBlock>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <!--<Grid Grid.Row="2" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Margin="90,0,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <TextBlock  FontSize="32" FontWeight="Regular" FontFamily="Roboto" Margin="0,20,0,0"><Run Text="Заявки на питомцев"/></TextBlock>
+                            <Line X1="0" Y1="12" X2="420" Y2="12" Margin="0,0,0,0" Stroke="#6527F2" />
+                        </StackPanel>
+                        <Grid Grid.Row="1" x:Name="GridOrders">
+                            <Border Background="white" CornerRadius="20" Margin="0,20,0,50">
+                                <Grid Height="100">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                        <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Имя пользователя:"/></TextBlock>
+                                        <TextBox Width="300" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                        <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Номер телефона пользователя:"/></TextBlock>
+                                        <TextBox Width="300" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                        <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Комментарий пользователя:"/></TextBlock>
+                                        <TextBox Width="300" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="20,0,90,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <TextBlock  FontSize="32" FontWeight="Regular" FontFamily="Roboto" Margin="0,20,0,0"><Run Text="Сообщения"/></TextBlock>
+                            <Line X1="0" Y1="12" X2="420" Y2="12" Margin="0,0,0,0" Stroke="#6527F2" />
+                        </StackPanel>
+                        <Grid Grid.Row="1" x:Name="GridMessages">
+                            <Border Background="white" CornerRadius="20" Margin="0,20,0,50">
+                                <Grid Height="100">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                        <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Имя пользователя:"/></TextBlock>
+                                        <TextBox Width="300" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                        <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Номер телефона пользователя:"/></TextBlock>
+                                        <TextBox Width="300" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,3.8,-0.4,7.6">
+                                        <TextBlock  FontSize="14" FontWeight="Regular"  FontFamily="Roboto" Margin="40,0,0,0"><Run Text="Сообщение:"/></TextBlock>
+                                        <TextBox Width="300" VerticalContentAlignment="Center" Padding="5,0,5,0" BorderBrush="#6527F2" BorderThickness="1" Margin="10,0,0,0"></TextBox>
+
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Grid>-->
+
+            </Grid>
+        </Border>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="courseProject.AdminFunctions" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgQAQACIAAACAAAAAAQAAAAAAEOABAAQAQ=</HashCode>
+      <FileName>AdminFunctions.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="main" />
+      <Property Name="Information_Pet" />
+      <Property Name="Type_pet" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.ApplicationContext">
+    <Position X="10" Y="12.25" Width="1.5" />
+    <InheritanceLine Type="System.Data.Entity.DbContext" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="14.281" />
+        <Point X="12.375" Y="14.281" />
+        <Point X="12.375" Y="11.394" />
+        <Point X="11.5" Y="11.394" />
+        <Point X="11.5" Y="12.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>BAAAACAAAAAAIAAAAAAAAAAAAAgQAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Contacts" />
+      <Property Name="Informations_pet" />
+      <Property Name="Orders_pet" />
+      <Property Name="Type_pet" />
+      <Property Name="User_information" />
+      <Property Name="Users" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="courseProject.Auth" BaseTypeListCollapsed="true">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAACAAAQAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Auth.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="main" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Catlink" BaseTypeListCollapsed="true">
+    <Position X="24" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAA=</HashCode>
+      <FileName>Catlink.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Cats" BaseTypeListCollapsed="true">
+    <Position X="22" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQ=</HashCode>
+      <FileName>Cats.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="main" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.ChooseAPet" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAARAAAAAAgAAAAA=</HashCode>
+      <FileName>ChooseAPet.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.ChooseAPets" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ChooseAPets.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Contact">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAAAgAAAAAAAAAEAgAABAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="courseProject.Contacts" BaseTypeListCollapsed="true">
+    <Position X="22" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Contacts.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Dogs" BaseTypeListCollapsed="true">
+    <Position X="20.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Dogs.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Property Name="ID" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Information_pet">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAgxAAAIEQOCAQAAAgECAAAAAAOAAAACgA=</HashCode>
+      <FileName>Information_pet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="courseProject.Kittens" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Kittens.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Property Name="ID" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.MainFrame" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAACAAAAAAgAAAAAAAAAAAgCAAAAAAAAA=</HashCode>
+      <FileName>MainFrame.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.MessageControl" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MessageControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Messages" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Messages.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Property Name="ID" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Order_pet">
+    <Position X="4.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIACEAAAABgEAAAABAAAAAQAAAIAAAAAAAAAAACAA=</HashCode>
+      <FileName>Order_pet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="courseProject.OrderControl" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrderControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Orders" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQgAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Orders.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Property Name="ID" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Profile" BaseTypeListCollapsed="true">
+    <Position X="20" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAQ=</HashCode>
+      <FileName>Profile.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="main" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Puppies" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Puppies.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Property Name="ID" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Reg" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Reg.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.Type_pet">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Type_pet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="courseProject.User">
+    <Position X="3" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAACAAgAAgEAAAABAAAAAAAAACAAAAAgAAAAg=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="courseProject.User_information">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAwQAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>User_information.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="courseProject.Window1" BaseTypeListCollapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <AssociationLine Name="active_user" Type="courseProject.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="1.893" />
+        <Point X="10.583" Y="1.893" Type="JumpStart" />
+        <Point X="10.417" Y="1.893" Type="JumpEnd" />
+        <Point X="10.25" Y="1.893" />
+        <Point X="10.25" Y="5.093" />
+        <Point X="8.25" Y="5.093" />
+        <Point X="8.25" Y="4.75" />
+        <Point X="8.146" Y="4.75" Type="JumpStart" />
+        <Point X="7.979" Y="4.75" Type="JumpEnd" />
+        <Point X="6.958" Y="4.75" Type="JumpStart" />
+        <Point X="6.792" Y="4.75" Type="JumpEnd" />
+        <Point X="5.99" Y="4.75" Type="JumpStart" />
+        <Point X="5.823" Y="4.75" Type="JumpEnd" />
+        <Point X="4.771" Y="4.75" Type="JumpStart" />
+        <Point X="4.604" Y="4.75" Type="JumpEnd" />
+        <Point X="2.625" Y="4.75" />
+        <Point X="2.625" Y="6.812" />
+        <Point X="3" Y="6.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAgAAAAAAAQAA=</HashCode>
+      <FileName>Window1.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="active_control" />
+      <Property Name="active_pet" />
+      <Property Name="active_user" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.PagesPet.PagePet" BaseTypeListCollapsed="true">
+    <Position X="24" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIAAAAAgAAAEAAAAAAAAAAAgAAAAAAAEAAAAAAAAQ=</HashCode>
+      <FileName>PagesPet\PagePet.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="main" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="courseProject.PagesPet.UserControlStayOwner" BaseTypeListCollapsed="true">
+    <Position X="26" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABQQAAAAAAAAAAAAAAAIAAAAAACAAAAAAQ=</HashCode>
+      <FileName>PagesPet\UserControlStayOwner.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="main" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Data.Entity.DbContext" Collapsed="true">
+    <Position X="10" Y="14" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
